@@ -1,7 +1,0 @@
-export const MENU_CONTENT = {
-    Mercury: {
-        name: "Mercury",
-        link: "aun no lo creo",
-        color: "haha"
-    }
-}
