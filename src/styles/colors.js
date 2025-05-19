@@ -7,5 +7,5 @@ export const COLORS = {
     saturn: "#CD5120",
     uranus: "#1EC1A2",
     neptune: "#2D68F0",
-    background: "#070724;"
+    background: "#070724"
 }

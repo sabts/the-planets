@@ -30,5 +30,19 @@ nav ul {
 body {
   margin: 0;
   font-family: sans-serif;
+  background: #070724;
+  background-repeat: repeat;
+}
+
+body::after {
+  content: "";
+  background-image: url(/assets/background-stars.svg);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  z-index: -1;
 }
 `;
