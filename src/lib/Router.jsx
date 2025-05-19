@@ -20,3 +20,5 @@ const Router = () => {
 };
 
 export default Router;
+
+// <Route path="/planet/:planetName" element={<Planet />} />
