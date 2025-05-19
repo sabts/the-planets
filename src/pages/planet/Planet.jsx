@@ -7,3 +7,4 @@ const Planet = () => {
     </div>
     </>
 }
+export default Planet
