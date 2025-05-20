@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import {
+  StyledhamburgerMenu,
   StyledHeader,
   StyledMenu,
   StyledPlanetCircle,
@@ -17,9 +18,10 @@ const Menu = () => {
         <h1 >THE PLANETS</h1>
         </Link>
         
-        <img
-          src="/assets/icon-hamburger.svg"
-          onClick={() => setShowMenu(!showMenu)}
+        <StyledhamburgerMenu
+        src="/assets/icon-hamburger.svg"
+        onClick={() => setShowMenu(!showMenu)}
+        $isOpen={showMenu}
         />
       </StyledHeader>
       <nav>

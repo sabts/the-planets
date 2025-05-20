@@ -43,8 +43,8 @@ const Router = () => {
         planet={"uranus"}
       />
       <Route
-        path={MENU_CONTENT.neptune}
-        element={<Planet planet="neptune" />}
+        path={"/neptune"}
+        element={<Planet planet="neptune"/>}
         planet={"neptune"}
       />
     </Routes>

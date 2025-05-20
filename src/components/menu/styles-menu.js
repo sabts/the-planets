@@ -27,15 +27,12 @@ const StyledMenu = styled.div`
   background-color: ${COLORS.background};
   width: 100%;
   height: 100%;
-   z-index: 10;
+  z-index: 10;
+   padding-top: 3rem;
 `;
 
-const StyledhamburgerMenu = styled.div`
-  display: block;
-  width: 24px;
-  height: 3px;
-  background-color: #fff;
-  box-shadow: 0px 10px #fff, 0px 20px #fff;
+const StyledhamburgerMenu = styled.img`
+  opacity: ${({ $isOpen }) => ($isOpen ? 0.5 : 1)};
 `;
 
 const StyledPlanetItem = styled.div`
