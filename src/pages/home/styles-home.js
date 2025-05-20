@@ -7,4 +7,4 @@ const StyledMainContainer = styled.div`
   justify-content: center;
 `;
 
-export {StyledMainContainer}
+export { StyledMainContainer };

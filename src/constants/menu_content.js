@@ -1,45 +1,52 @@
-import {ROUTES} from "../lib/routes"
+import { v4 } from "uuid";
 
-
-export const MENU_CONTENT = {
-  mercury: {
+export const MENU_CONTENT = [
+  {
+    id: v4(),
     name: "Mercury",
-    link: ROUTES.planets.mercury,
-    color: "#DEF4FC"
+    link: "/mercury",
+    color: "#DEF4FC",
   },
-  venus: {
+  {
+    id: v4(),
     name: "Venus",
-    link: ROUTES.planets.venus,
-    color: "#F7CC7F"
+    link: "/venus",
+    color: "#F7CC7F",
   },
-  earth: {
+  {
+    id: v4(),
     name: "Earth",
-    link: ROUTES.planets.earth,
-    color: "#545BFE"
+    link: "/earth",
+    color: "#545BFE",
   },
-  mars: {
-    name: "Mars",
-    link: ROUTES.planets.mars,
-    color: "#FF6A45"
+  {
+    id: v4(),
+    name: "mars",
+    link: "/mars",
+    color: "#FF6A45",
   },
-  jupiter: {
+  {
+    id: v4(),
     name: "Jupiter",
-    link: ROUTES.planets.jupiter,
-    color: "#ECAD7A"
+    link: "/jupiter",
+    color: "#ECAD7A",
   },
-  saturn: {
+  {
+    id: v4(),
     name: "Saturn",
-    link: ROUTES.planets.saturn,
-    color: "#FCCB6B"
+    link: "/saturn",
+    color: "#FCCB6B",
   },
-  uranus: {
+  {
+    id: v4(),
     name: "Uranus",
-    link: ROUTES.planets.uranus,
-    color: "#65F0D5"
+    link: "/uranus",
+    color: "#65F0D5",
   },
-  neptune: {
+  {
+    id: v4(),
     name: "Neptune",
-    link: ROUTES.planets.neptune,
-    color: "#497EFA"
-  }
-};
+    link: "/neptune",
+    color: "#497EFA",
+  },
+];
