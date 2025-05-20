@@ -1,5 +1,12 @@
 import { useState } from "react";
 import { PLANETS_INFO } from "../../constants/planets_info";
+import {
+  StyledExtraInfobox,
+  StyledInfoText,
+  StyledPlanetContainer,
+  StyledPlanetInfoContainer,
+  StyledPlanetPhoto,
+} from "./styles-planet-card";
 
 const PlanetCard = ({ planet }) => {
   const [activeSection, setActiveSection] = useState("overview");
@@ -15,13 +22,16 @@ const PlanetCard = ({ planet }) => {
       </div>
 
       {activeSection === "overview" && (
-        <div>
-          <img
+        <StyledPlanetContainer>
+          <StyledPlanetPhoto
             src={planetSelected.overview.image}
             alt={`${planetSelected.displayName} overview`}
           />
-          <p>{planetSelected.overview.info}</p>
-        </div>
+          <StyledPlanetInfoContainer>
+            <h2>{planetSelected.displayName}</h2>
+            <StyledInfoText>{planetSelected.overview.info}</StyledInfoText>
+          </StyledPlanetInfoContainer>
+        </StyledPlanetContainer>
       )}
 
       {activeSection === "internalStructure" && (
@@ -30,7 +40,7 @@ const PlanetCard = ({ planet }) => {
             src={planetSelected.internalStructure.image}
             alt={`${planetSelected.displayName} internal structure`}
           />
-          <p>{planetSelectede.internalStructure.info}</p>
+          <p>{planetSelected.internalStructure.info}</p>
         </div>
       )}
 
@@ -43,27 +53,26 @@ const PlanetCard = ({ planet }) => {
           <p>{planetSelected.surfaceGeology.info}</p>
         </div>
       )}
-
+      <div>
+        <a href={planetSelected.wikiUrl}>Source: Wikipedia</a>
+      </div>
       <section>
-        <div>
+        <StyledExtraInfobox>
           <span>ROTATION TIME</span>
           <span>{planetSelected.rotationTime}</span>
-        </div>
-        <div>
+        </StyledExtraInfobox>
+        <StyledExtraInfobox>
           <span>REVOLUTION TIME</span>
           <span>{planetSelected.revolutionTime}</span>
-        </div>
-        <div>
+        </StyledExtraInfobox>
+        <StyledExtraInfobox>
           <span>RADIUS</span>
           <span>{planetSelected.radius}</span>
-        </div>
-        <div>
+        </StyledExtraInfobox>
+        <StyledExtraInfobox>
           <span>AVERAGE TEMP.</span>
           <span>{planetSelected.averageTemp}</span>
-        </div>
-        <div>
-          <a href={planetSelected.wikiUrl}>Source: Wikipedia</a>
-        </div>
+        </StyledExtraInfobox>
       </section>
     </>
   );
