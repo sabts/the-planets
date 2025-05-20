@@ -20,6 +20,14 @@ letter-spacing: 0.1206rem;
 color: #fff;
 padding: 1.5rem;
 `
+const StyledSectionButton = styled.span`
+  cursor: pointer;
+  padding: 10px 15px;
+  color: ${({ $isActive }) => ($isActive ? '#fff' : 'rgba(255, 255, 255, 0.2)')};
+  border-bottom: 4px solid
+    ${({ $isActive, $planetColor }) => ($isActive ? $planetColor : 'transparent')};
+  transition: all 0.2s ease-in-out;
+`;
 
 //cada planeta tiene un tamaño colocarlo en el objeto $planetSize y un before para el surface $planetLocation
 const StyledPlanetPhoto = styled.div`
@@ -117,6 +125,7 @@ text-transform: uppercase;
 export {
   StyledPlanetContainer,
   StyledSectionContainer,
+  StyledSectionButton,
   StyledPlanetPhoto,
   StyledPlanetInfoContainer,
   StyledPlanetNameTitle,

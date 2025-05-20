@@ -1,3 +1,5 @@
+import { COLORS } from "../styles/colors";
+
 export const PLANETS_INFO = [
   {
     name: "mercury",
@@ -7,6 +9,7 @@ export const PLANETS_INFO = [
     radius: "2,439.7 km",
     averageTemp: "430°c",
     size: "111px",
+    color: COLORS.mercury,
     wikiUrl: "https://es.wikipedia.org/wiki/Mercurio_(planeta)",
     overview: {
       info: "Mercury is the smallest planet in the Solar System and the closest to the Sun. Its orbit around the Sun takes 87.97 Earth days, the shortest of all the Sun's planets. Mercury is one of four terrestrial planets in the Solar System, and is a rocky body like Earth.",
@@ -33,6 +36,7 @@ export const PLANETS_INFO = [
     radius: "6,051.8 km",
     averageTemp: "471°c",
     size: "154px",
+    color: COLORS.venus,
     wikiUrl: "https://es.wikipedia.org/wiki/Venus_(planeta)",
     overview: {
       info: "Venus is the second planet from the Sun. It is named after the Roman goddess of love and beauty. As the brightest natural object in Earth's night sky after the Moon, Venus can cast shadows and can be, on rare occasions, visible to the naked eye in broad daylight.",
@@ -59,6 +63,7 @@ export const PLANETS_INFO = [
     radius: "6,371 km",
     averageTemp: "16°c",
     size: "173px",
+    color: COLORS.earth,
     wikiUrl: "https://es.wikipedia.org/wiki/Tierra",
     overview: {
       info: "Third planet from the Sun and the only known planet to harbor life. About 29.2% of Earth's surface is land with remaining 70.8% is covered with water. Earth's distance from the Sun, physical properties and geological history have allowed life to evolve and thrive.",
@@ -84,6 +89,7 @@ export const PLANETS_INFO = [
     radius: "3,389.5 km",
     averageTemp: "−28°c",
     size: "129px",
+    color: COLORS.mars,
     wikiUrl: "https://es.wikipedia.org/wiki/Marte_(planeta)",
     overview: {
       info: 'Mars is the fourth planet from the Sun and the second-smallest planet in the Solar System, being larger than only Mercury. In English, Mars carries the name of the Roman god of war and is often referred to as the "Red Planet".',
@@ -109,6 +115,7 @@ export const PLANETS_INFO = [
     radius: "69,911 km",
     averageTemp: "-108°c",
     size: "224px",
+    color: COLORS.jupiter,
     wikiUrl: "https://es.wikipedia.org/wiki/J%C3%BApiter_(planeta)",
     overview: {
       info: "Jupiter is the fifth planet from the Sun and the largest in the Solar System. It is a gas giant with a mass two and a half times that of all the other planets in the Solar System combined, but less than one-thousandth the mass of the Sun.",
@@ -134,6 +141,7 @@ export const PLANETS_INFO = [
     radius: "58,232 km",
     averageTemp: "-138°c",
     size: " 256px",
+    color: COLORS.saturn,
     wikiUrl: "https://es.wikipedia.org/wiki/Saturno_(planeta)",
     overview: {
       info: "Saturn is the sixth planet from the Sun and the second-largest in the Solar System, after Jupiter. It is a gas giant with an average radius of about nine and a half times that of Earth. It only has one-eighth the average density of Earth.",
@@ -159,6 +167,7 @@ export const PLANETS_INFO = [
     radius: "25,362 km",
     averageTemp: "-195°c",
     size: "176px",
+    color: COLORS.uranus,
     wikiUrl: "https://es.wikipedia.org/wiki/Urano_(planeta)",
     overview: {
       info: "Uranus is the seventh planet from the Sun. Its name is a reference to the Greek god of the sky, Uranus according to Greek mythology, was the great-grandfather of Ares. It has the third-largest planetary radius and fourth-largest planetary mass in the Solar System.",
@@ -184,6 +193,7 @@ export const PLANETS_INFO = [
     radius: "24,622 km",
     averageTemp: "-195°c",
     size: "-201°c",
+    color: COLORS.neptune,
     wikiUrl: "https://es.wikipedia.org/wiki/Neptuno_(planeta)",
     overview: {
       info: "Neptune is the eighth and farthest-known Solar planet from the Sun. In the Solar System, it is the fourth-largest planet by diameter, the third-most-massive planet, and the densest giant planet. It is 17 times the mass of Earth, more massive than its near-twin Uranus.",

@@ -9,6 +9,7 @@ import {
   StyledPlanetInfoContainer,
   StyledPlanetNameTitle,
   StyledPlanetPhoto,
+  StyledSectionButton,
   StyledSectionContainer,
   StyledSource,
   StyledSourceContainer,
@@ -20,12 +21,33 @@ const PlanetCard = ({ planet }) => {
   return (
     <>
     <StyledSectionContainer>
-    <span onClick={() => setActiveSection("overview")}>OVERVIEW</span>
-        <span onClick={() => setActiveSection("internalStructure")}>
-          STRUCTURE
-        </span>
-        <span onClick={() => setActiveSection("surfaceGeology")}>SURFACE</span>
+    <StyledSectionButton
+    onClick={() => setActiveSection('overview')}
+    $isActive={activeSection === 'overview'}
+    $planetColor={planetSelected.color}
+  >
+    OVERVIEW
+  </StyledSectionButton>
+
+  <StyledSectionButton
+    onClick={() => setActiveSection('internalStructure')}
+    $isActive={activeSection === 'internalStructure'}
+    $planetColor={planetSelected.color}
+  >
+    STRUCTURE
+  </StyledSectionButton>
+
+  <StyledSectionButton
+    onClick={() => setActiveSection('surfaceGeology')}
+    $isActive={activeSection === 'surfaceGeology'}
+    $planetColor={planetSelected.color}
+  >
+    SURFACE
+  </StyledSectionButton>
     </StyledSectionContainer>
+
+
+
     {activeSection === "overview" && (
   <StyledPlanetContainer>
     <StyledPlanetPhoto

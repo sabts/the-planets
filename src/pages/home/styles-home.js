@@ -5,6 +5,12 @@ const StyledMainContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position:relative;
 `;
 
-export { StyledMainContainer };
+const StyledAllPlanetsImg = styled.img`
+position: absolute;
+top: 100px
+`
+
+export { StyledMainContainer, StyledAllPlanetsImg };

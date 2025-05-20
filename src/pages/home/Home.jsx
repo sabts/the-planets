@@ -1,6 +1,6 @@
 import Menu from "../../components/menu/Menu";
 import {MENU_CONTENT} from "../../constants/menu_content"
-import { StyledMainContainer } from "./styles-home";
+import { StyledAllPlanetsImg, StyledMainContainer } from "./styles-home";
 
 const Home = () => {
   return (
@@ -8,7 +8,7 @@ const Home = () => {
      <Menu planets={MENU_CONTENT} />
      
     <StyledMainContainer>
-      <img src="/assets/all-planets.png" alt="All Planets" />
+      <StyledAllPlanetsImg  src="/assets/all-planets.png" alt="All Planets" />
     </StyledMainContainer>
     </>
   );

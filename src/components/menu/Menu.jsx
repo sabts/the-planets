@@ -13,7 +13,10 @@ const Menu = () => {
   return (
     <div>
       <StyledHeader>
-        <h1>THE PLANETS</h1>
+      <Link to="/" onClick={() => setShowMenu(false)}>
+        <h1 >THE PLANETS</h1>
+        </Link>
+        
         <img
           src="/assets/icon-hamburger.svg"
           onClick={() => setShowMenu(!showMenu)}
