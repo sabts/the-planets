@@ -11,7 +11,6 @@ const StyledHeader = styled.div`
   color: #fff;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   padding-inline: 16px;
-  margin-bottom: 4rem;
   background-color: ${COLORS.background};
 `;
 
@@ -28,6 +27,7 @@ const StyledMenu = styled.div`
   background-color: ${COLORS.background};
   width: 100%;
   height: 100%;
+   z-index: 10;
 `;
 
 const StyledhamburgerMenu = styled.div`
