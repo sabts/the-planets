@@ -30,8 +30,7 @@ nav ul {
 body {
   margin: 0;
   font-family: sans-serif;
-  background: #070724;
-  background-repeat: repeat;
+  background: #E0F1E8;
 }
 
 body::after {
