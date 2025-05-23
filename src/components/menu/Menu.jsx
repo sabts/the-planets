@@ -7,7 +7,7 @@ import {
   StyledPlanetItem,
 } from "./styles-menu";
 import { useState } from "react";
-import { MENU_CONTENT } from "../../constants/menu_content";
+import { MENU_CONTENT } from "../../constants/menu-content";
 
 const Menu = () => {
   const [showMenu, setShowMenu] = useState(false);

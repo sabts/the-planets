@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { PLANETS_INFO } from "../../constants/planets_info";
+import { PLANETS_INFO } from "../../constants/planets-info";
 import {
   StyledExtraInfobox,
   StyledExtraInfoCaption,

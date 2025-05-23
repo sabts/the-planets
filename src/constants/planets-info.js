@@ -1,5 +1,13 @@
 import { COLORS } from "../styles/colors";
 
+const MERCURY = {
+  images:{
+    0: "/assets/planet-mercury.svg",
+  }
+
+
+}
+
 export const PLANETS_INFO = [
   {
     name: "mercury",
