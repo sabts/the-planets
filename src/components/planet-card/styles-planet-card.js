@@ -20,7 +20,7 @@ const StyledSectionContainer = styled.div`
   letter-spacing: 0.1206rem;
   color: #fff;
   height: 55px;
-  padding: 1.5rem;
+  padding: 1.5rem;  
 `;
 const StyledSectionButton = styled.span`
   display: flex;
@@ -45,7 +45,7 @@ const StyledPhotoMainContainer = styled.div`
   &::after {
     content: "";
     position: absolute;
-    bottom: 95%;
+    bottom: -80%;
     left: 50%;
     width: 70%;
     height: 70%;

@@ -49,11 +49,13 @@ const PlanetCard = ({ planet }) => {
 
       {activeSection === "overview" && (
         <StyledPlanetContainer>
+          <StyledPhotoMainContainer>
           <StyledPlanetPhoto
             src={planetSelected.overview.image}
             $planetSize={planetSelected.size}
             alt={`${planetSelected.displayName} overview`}
           />
+          </StyledPhotoMainContainer>
           <StyledPlanetInfoContainer>
             <StyledPlanetNameTitle>
               {planetSelected.displayName}
@@ -65,11 +67,13 @@ const PlanetCard = ({ planet }) => {
 
       {activeSection === "internalStructure" && (
         <StyledPlanetContainer>
+              <StyledPhotoMainContainer>
           <StyledPlanetPhoto
             src={planetSelected.internalStructure.image}
             $planetSize={planetSelected.size}
             alt={`${planetSelected.displayName} internal structure`}
           />
+          </StyledPhotoMainContainer>
           <StyledPlanetInfoContainer>
             <StyledPlanetNameTitle>
               {planetSelected.displayName}
