@@ -5,6 +5,7 @@ import {
   StyledExtraInfoCaption,
   StyledInfoText,
   StyledLinkSource,
+  StyledPhotoMainContainer,
   StyledPlanetContainer,
   StyledPlanetInfoContainer,
   StyledPlanetNameTitle,
@@ -20,84 +21,97 @@ const PlanetCard = ({ planet }) => {
   const planetSelected = findPlanet(planet);
   return (
     <>
-    <StyledSectionContainer>
-    <StyledSectionButton
-    onClick={() => setActiveSection('overview')}
-    $isActive={activeSection === 'overview'}
-    $planetColor={planetSelected.color}
-  >
-    OVERVIEW
-  </StyledSectionButton>
+      <StyledSectionContainer>
+        <StyledSectionButton
+          onClick={() => setActiveSection("overview")}
+          $isActive={activeSection === "overview"}
+          $planetColor={planetSelected.color}
+        >
+          OVERVIEW
+        </StyledSectionButton>
 
-  <StyledSectionButton
-    onClick={() => setActiveSection('internalStructure')}
-    $isActive={activeSection === 'internalStructure'}
-    $planetColor={planetSelected.color}
-  >
-    STRUCTURE
-  </StyledSectionButton>
+        <StyledSectionButton
+          onClick={() => setActiveSection("internalStructure")}
+          $isActive={activeSection === "internalStructure"}
+          $planetColor={planetSelected.color}
+        >
+          STRUCTURE
+        </StyledSectionButton>
 
-  <StyledSectionButton
-    onClick={() => setActiveSection('surfaceGeology')}
-    $isActive={activeSection === 'surfaceGeology'}
-    $planetColor={planetSelected.color}
-  >
-    SURFACE
-  </StyledSectionButton>
-    </StyledSectionContainer>
+        <StyledSectionButton
+          onClick={() => setActiveSection("surfaceGeology")}
+          $isActive={activeSection === "surfaceGeology"}
+          $planetColor={planetSelected.color}
+        >
+          SURFACE
+        </StyledSectionButton>
+      </StyledSectionContainer>
 
+      {activeSection === "overview" && (
+        <StyledPlanetContainer>
+          <StyledPlanetPhoto
+            src={planetSelected.overview.image}
+            $planetSize={planetSelected.size}
+            alt={`${planetSelected.displayName} overview`}
+          />
+          <StyledPlanetInfoContainer>
+            <StyledPlanetNameTitle>
+              {planetSelected.displayName}
+            </StyledPlanetNameTitle>
+            <StyledInfoText>{planetSelected.overview.info}</StyledInfoText>
+          </StyledPlanetInfoContainer>
+        </StyledPlanetContainer>
+      )}
 
+      {activeSection === "internalStructure" && (
+        <StyledPlanetContainer>
+          <StyledPlanetPhoto
+            src={planetSelected.internalStructure.image}
+            $planetSize={planetSelected.size}
+            alt={`${planetSelected.displayName} internal structure`}
+          />
+          <StyledPlanetInfoContainer>
+            <StyledPlanetNameTitle>
+              {planetSelected.displayName}
+            </StyledPlanetNameTitle>
+            <StyledInfoText>
+              {planetSelected.internalStructure.info}
+            </StyledInfoText>
+          </StyledPlanetInfoContainer>
+        </StyledPlanetContainer>
+      )}
 
-    {activeSection === "overview" && (
-  <StyledPlanetContainer>
-    <StyledPlanetPhoto
-      src={planetSelected.overview.image} 
-      $planetSize={planetSelected.size}
-      alt={`${planetSelected.displayName} overview`}
-    />
-    <StyledPlanetInfoContainer>
-      <StyledPlanetNameTitle>{planetSelected.displayName}</StyledPlanetNameTitle>
-      <StyledInfoText>{planetSelected.overview.info}</StyledInfoText>
-    </StyledPlanetInfoContainer>
-  </StyledPlanetContainer>
-)}
+      {activeSection === "surfaceGeology" && (
+        <StyledPlanetContainer>
+          <StyledPhotoMainContainer
+            $planetLocation={planetSelected.surfaceGeology.image.geology}
+          >
+            <StyledPlanetPhoto
+              src={planetSelected.surfaceGeology.image.planet}
+              $planetSize={planetSelected.size}
+              alt={`${planetSelected.displayName} surface geology`}
+            />
+          </StyledPhotoMainContainer>
+          <StyledPlanetInfoContainer>
+            <StyledPlanetNameTitle>
+              {planetSelected.displayName}
+            </StyledPlanetNameTitle>
+            <StyledInfoText>
+              {planetSelected.surfaceGeology.info}
+            </StyledInfoText>
+          </StyledPlanetInfoContainer>
+        </StyledPlanetContainer>
+      )}
 
-{activeSection === "internalStructure" && (
-  <StyledPlanetContainer>
-    <StyledPlanetPhoto
-      src={planetSelected.internalStructure.image}
-      $planetSize={planetSelected.size}
-      alt={`${planetSelected.displayName} internal structure`}
-    />
-    <StyledPlanetInfoContainer>
-      <StyledPlanetNameTitle>{planetSelected.displayName}</StyledPlanetNameTitle>
-      <StyledInfoText>{planetSelected.internalStructure.info}</StyledInfoText>
-    </StyledPlanetInfoContainer>
-  </StyledPlanetContainer>
-)}
-
-{activeSection === "surfaceGeology" && (
-  <StyledPlanetContainer>
-    <StyledPlanetPhoto
-      src={planetSelected.surfaceGeology.image.planet}
-      $planetSize={planetSelected.size}
-      $planetLocation={planetSelected.surfaceGeology.image.geology}
-      alt={`${planetSelected.displayName} surface geology`}
-    />
-    <StyledPlanetInfoContainer>
-      <StyledPlanetNameTitle>{planetSelected.displayName}</StyledPlanetNameTitle>
-      <StyledInfoText>{planetSelected.surfaceGeology.info}</StyledInfoText>
-    </StyledPlanetInfoContainer>
-  </StyledPlanetContainer>
-)}
-      
       <StyledSourceContainer>
-      <StyledSource>Source:</StyledSource>
-      <StyledLinkSource href={planetSelected.wikiUrl}>Wikipedia</StyledLinkSource>
+        <StyledSource>Source:</StyledSource>
+        <StyledLinkSource href={planetSelected.wikiUrl}>
+          Wikipedia
+        </StyledLinkSource>
       </StyledSourceContainer>
-      
+
       <StyledPlanetContainer>
-      <StyledExtraInfobox>
+        <StyledExtraInfobox>
           <StyledExtraInfoCaption>ROTATION TIME</StyledExtraInfoCaption>
           <span>{planetSelected.rotationTime}</span>
         </StyledExtraInfobox>
@@ -106,7 +120,7 @@ const PlanetCard = ({ planet }) => {
           <span>{planetSelected.revolutionTime}</span>
         </StyledExtraInfobox>
         <StyledExtraInfobox>
-           <StyledExtraInfoCaption>RADIUS</StyledExtraInfoCaption>
+          <StyledExtraInfoCaption>RADIUS</StyledExtraInfoCaption>
           <span>{planetSelected.radius}</span>
         </StyledExtraInfobox>
         <StyledExtraInfobox>
