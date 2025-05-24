@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const StyledSectionContainer = styled.div`
+const StyledSectionContainer = styled.ul`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -12,7 +12,7 @@ const StyledSectionContainer = styled.div`
   height: 55px;
   padding: 1.5rem;  
 `;
-const StyledSectionButton = styled.span`
+const StyledSectionButton = styled.li`
   display: flex;
   align-items: center;
   height: 55px;

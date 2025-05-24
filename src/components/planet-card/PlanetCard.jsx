@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { PLANETS_INFO } from "../../constants/planets-info";
+import { PLANETS_INFO } from "../../constants/planets-info"
 import {
   StyledExtraInfobox,
   StyledExtraInfoCaption,
@@ -14,81 +14,54 @@ import {
   StyledSourceContainer,
 } from "./styles-planet-card";
 import Tabs from "../tabs/tabs";
+import { TABS_INFO } from "../../constants/tabs";
 
-const PlanetCard = ({ planet }) => {
-  const [activeTab, setActiveTab] = useState(0);
-  const planetSelected = findPlanet(planet);
+const PlanetCard = ({ planetName }) => {
+  const [activeTab, setActiveTab] = useState(TABS_INFO.OVERVIEW);
+  const planetInfo = PLANETS_INFO[planetName]
   return (
     <>
-    <Tabs
-    activeTab={activeTab}
-    setActiveTab={setActiveTab}
-    planetColor={planetSelected.color}
-    />
+   <Tabs
+  activeTab={activeTab}
+  setActiveTab={setActiveTab}
+  planetColor={planetInfo.color}
+/>
 
-      {activeTab !== 2 && (
-        <StyledPlanetContainer>
-          <StyledPhotoMainContainer>
-          <StyledPlanetPhoto
-            src={planetSelected.image[activeTab]}
-            $planetSize={planetSelected.size}
-            alt=""
-          />
-          </StyledPhotoMainContainer>
-          <StyledPlanetInfoContainer>
-            <StyledPlanetNameTitle>
-              {planetSelected.displayName}
-            </StyledPlanetNameTitle>
-            <StyledInfoText>{planetSelected.overview.info}</StyledInfoText>
-          </StyledPlanetInfoContainer>
-        </StyledPlanetContainer>
-      )}
+{activeTab !== TABS_INFO.SURFACE && (
+  <StyledPlanetContainer>
+    <StyledPhotoMainContainer>
+      <StyledPlanetPhoto
+        src={planetInfo.images[activeTab]}
+        $planetSize={planetInfo.size}
+        alt=""
+      />
+    </StyledPhotoMainContainer>
+    <StyledPlanetInfoContainer>
+      <StyledPlanetNameTitle>{planetInfo.name}</StyledPlanetNameTitle>
+      <StyledInfoText>{planetInfo.texts[activeTab]}</StyledInfoText>
+    </StyledPlanetInfoContainer>
+  </StyledPlanetContainer>
+)}
 
-      {activeSection === "internalStructure" && (
-        <StyledPlanetContainer>
-              <StyledPhotoMainContainer>
-          <StyledPlanetPhoto
-            src={planetSelected.internalStructure.image}
-            $planetSize={planetSelected.size}
-            alt={`${planetSelected.displayName} internal structure`}
-          />
-          </StyledPhotoMainContainer>
-          <StyledPlanetInfoContainer>
-            <StyledPlanetNameTitle>
-              {planetSelected.displayName}
-            </StyledPlanetNameTitle>
-            <StyledInfoText>
-              {planetSelected.internalStructure.info}
-            </StyledInfoText>
-          </StyledPlanetInfoContainer>
-        </StyledPlanetContainer>
-      )}
-
-      {activeSection === "surfaceGeology" && (
-        <StyledPlanetContainer>
-          <StyledPhotoMainContainer
-            $planetLocation={planetSelected.surfaceGeology.image.geology}
-          >
-            <StyledPlanetPhoto
-              src={planetSelected.surfaceGeology.image.planet}
-              $planetSize={planetSelected.size}
-              alt={`${planetSelected.displayName} surface geology`}
-            />
-          </StyledPhotoMainContainer>
-          <StyledPlanetInfoContainer>
-            <StyledPlanetNameTitle>
-              {planetSelected.displayName}
-            </StyledPlanetNameTitle>
-            <StyledInfoText>
-              {planetSelected.surfaceGeology.info}
-            </StyledInfoText>
-          </StyledPlanetInfoContainer>
-        </StyledPlanetContainer>
-      )}
-
+{activeTab === TABS_INFO.SURFACE && (
+  <StyledPlanetContainer>
+    <StyledPhotoMainContainer $planetLocation={planetInfo.images[2].geology}>
+      <StyledPlanetPhoto
+        src={planetInfo.images[2].planet} // <- y acá
+        $planetSize={planetInfo.size}
+        alt=""
+      />
+    </StyledPhotoMainContainer>
+    <StyledPlanetInfoContainer>
+      <StyledPlanetNameTitle>{planetInfo.name}</StyledPlanetNameTitle>
+      <StyledInfoText>{planetInfo.texts[2]}</StyledInfoText>
+    </StyledPlanetInfoContainer>
+  </StyledPlanetContainer>
+)}
+     
       <StyledSourceContainer>
         <StyledSource>Source:</StyledSource>
-        <StyledLinkSource href={planetSelected.wikiUrl}>
+        <StyledLinkSource href={planetInfo.wikiUrl}>
           Wikipedia
         </StyledLinkSource>
       </StyledSourceContainer>
@@ -96,27 +69,23 @@ const PlanetCard = ({ planet }) => {
       <StyledPlanetContainer>
         <StyledExtraInfobox>
           <StyledExtraInfoCaption>ROTATION TIME</StyledExtraInfoCaption>
-          <span>{planetSelected.rotationTime}</span>
+          <span>{planetInfo.rotationTime}</span>
         </StyledExtraInfobox>
         <StyledExtraInfobox>
           <StyledExtraInfoCaption>REVOLUTION TIME</StyledExtraInfoCaption>
-          <span>{planetSelected.revolutionTime}</span>
+          <span>{planetInfo.revolutionTime}</span>
         </StyledExtraInfobox>
         <StyledExtraInfobox>
           <StyledExtraInfoCaption>RADIUS</StyledExtraInfoCaption>
-          <span>{planetSelected.radius}</span>
+          <span>{planetInfo.radius}</span>
         </StyledExtraInfobox>
         <StyledExtraInfobox>
           <StyledExtraInfoCaption>AVERAGE TEMP.</StyledExtraInfoCaption>
-          <span>{planetSelected.averageTemp}</span>
+          <span>{planetInfo.averageTemp}</span>
         </StyledExtraInfobox>
       </StyledPlanetContainer>
     </>
   );
-};
-
-const findPlanet = planetSelected => {
-  return PLANETS_INFO.find(planet => planetSelected === planet.name);
 };
 
 export default PlanetCard;

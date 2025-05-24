@@ -9,6 +9,7 @@ const StyledPlanetContainer = styled.div`
   align-items: center;
   padding-inline: 1.5rem;
 `;
+
 const StyledPhotoMainContainer = styled.div`
   width: ${({ $planetSize }) => $planetSize};
   height: ${({ $planetSize }) => $planetSize};
@@ -18,25 +19,23 @@ const StyledPhotoMainContainer = styled.div`
   &::after {
     content: "";
     position: absolute;
-    bottom: -80%;
     left: 50%;
-    width: 70%;
-    height: 70%;
+    top: 70%;
+    width: 100px;
+    height: 100px;
     background-image: url(${({ $planetLocation }) => $planetLocation});
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%); 
   }
 `;
 
 const StyledPlanetPhoto = styled.img`
   width: ${({ $planetSize }) => $planetSize};
   height: ${({ $planetSize }) => $planetSize};
-  background-image: url(${({ src }) => src});
-  background-size: cover;
-  background-position: center;
   display: block;
+  object-fit: contain 
 `;
 
 const StyledPlanetInfoContainer = styled.div`
