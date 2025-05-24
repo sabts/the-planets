@@ -44,6 +44,7 @@ const StyledPlanetInfoContainer = styled.div`
 `;
 
 const StyledPlanetNameTitle = styled.h2`
+  font-family: 'Antonio', sans-serif;
   color: #fff;
   font-size: 2.5rem;
   font-weight: 400;
@@ -51,7 +52,8 @@ const StyledPlanetNameTitle = styled.h2`
 `;
 
 const StyledInfoText = styled.p`
-  font-size: 0.6875rem;
+font-family: 'League Spartan', sans-serif;
+  font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.375rem;
 `;
@@ -64,15 +66,17 @@ const StyledSourceContainer = styled.div`
 `;
 
 const StyledSource = styled.span`
+ font-family: 'League Spartan', sans-serif;
   color: rgba(255, 255, 255, 0.2);
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.5625rem;
 `;
 
 const StyledLinkSource = styled(Link)`
+font-family: 'League Spartan', sans-serif;
   color: rgba(255, 255, 255, 0.2);
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   font-weight: 700;
   line-height: 1.5625rem;
   text-decoration-line: underline;
@@ -96,14 +100,20 @@ const StyledExtraInfobox = styled.div`
 `;
 
 const StyledExtraInfoCaption = styled.span`
+font-family: 'League Spartan', sans-serif;
   color: rgba(255, 255, 255, 0.2);
-  font-size: 0.5rem;
+  font-size: 0.6875rem;
   font-style: normal;
   font-weight: 700;
   line-height: 1rem;
   letter-spacing: 0.0454rem;
   text-transform: uppercase;
 `;
+
+const StyledExtraInfoContent = styled.span`
+font-family: 'Antonio', sans-serif;
+font-size: 1.25rem;
+`
 
 export {
   StyledPlanetContainer,
@@ -117,4 +127,5 @@ export {
   StyledLinkSource,
   StyledExtraInfobox,
   StyledExtraInfoCaption,
+  StyledExtraInfoContent
 };

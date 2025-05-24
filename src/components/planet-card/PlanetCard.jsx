@@ -3,6 +3,7 @@ import { PLANETS_INFO } from "../../constants/planets-info"
 import {
   StyledExtraInfobox,
   StyledExtraInfoCaption,
+  StyledExtraInfoContent,
   StyledInfoText,
   StyledLinkSource,
   StyledPhotoMainContainer,
@@ -47,7 +48,7 @@ const PlanetCard = ({ planetName }) => {
   <StyledPlanetContainer>
     <StyledPhotoMainContainer $planetLocation={planetInfo.images[2].geology}>
       <StyledPlanetPhoto
-        src={planetInfo.images[2].planet} // <- y acá
+        src={planetInfo.images[2].planet} 
         $planetSize={planetInfo.size}
         alt=""
       />
@@ -69,19 +70,19 @@ const PlanetCard = ({ planetName }) => {
       <StyledPlanetContainer>
         <StyledExtraInfobox>
           <StyledExtraInfoCaption>ROTATION TIME</StyledExtraInfoCaption>
-          <span>{planetInfo.rotationTime}</span>
+          <StyledExtraInfoContent>{planetInfo.rotationTime}</StyledExtraInfoContent>
         </StyledExtraInfobox>
         <StyledExtraInfobox>
           <StyledExtraInfoCaption>REVOLUTION TIME</StyledExtraInfoCaption>
-          <span>{planetInfo.revolutionTime}</span>
+          <StyledExtraInfoContent>{planetInfo.revolutionTime}</StyledExtraInfoContent>
         </StyledExtraInfobox>
         <StyledExtraInfobox>
           <StyledExtraInfoCaption>RADIUS</StyledExtraInfoCaption>
-          <span>{planetInfo.radius}</span>
+          <StyledExtraInfoContent>{planetInfo.radius}</StyledExtraInfoContent>
         </StyledExtraInfobox>
         <StyledExtraInfobox>
           <StyledExtraInfoCaption>AVERAGE TEMP.</StyledExtraInfoCaption>
-          <span>{planetInfo.averageTemp}</span>
+          <StyledExtraInfoContent>{planetInfo.averageTemp}</StyledExtraInfoContent>
         </StyledExtraInfobox>
       </StyledPlanetContainer>
     </>

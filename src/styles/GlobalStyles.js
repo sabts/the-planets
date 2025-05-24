@@ -43,14 +43,4 @@ body::after {
   height: 100%;
   background-size: cover;
   z-index: -1;
-  animation: starTwinkle 3s ease-in-out infinite;
-}
-
-@keyframes starTwinkle {
-  0%, 100% {
-    opacity: 1;  
-  }
-  50% {
-    opacity: 0.5;
-  }
 }`

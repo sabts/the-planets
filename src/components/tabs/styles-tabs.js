@@ -5,7 +5,7 @@ const StyledSectionContainer = styled.ul`
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  font-size: 0.5625rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.1206rem;
   color: #fff;
@@ -14,10 +14,11 @@ const StyledSectionContainer = styled.ul`
 `;
 const StyledSectionButton = styled.li`
   display: flex;
+  font-family: 'League Spartan', sans-serif;
   align-items: center;
   height: 55px;
   padding: 10px 15px;
-  height: strech;
+  height: stretch;  
   color: ${({ $isActive }) =>
     $isActive ? "#fff" : "rgba(255, 255, 255, 0.2)"};
   border-bottom: 4px solid

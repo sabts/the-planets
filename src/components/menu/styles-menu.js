@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { COLORS } from "../../styles/colors";
 
 const StyledHeader = styled.div`
+font-family: 'Antonio', sans-serif;
   position: relative;
   display: flex;
   align-items: center;
@@ -15,17 +16,17 @@ const StyledHeader = styled.div`
 `;
 
 const StyledMenu = styled.ul`
+font-family: 'League Spartan', sans-serif;
   display: flex;
   flex-direction: column;
   gap: 50px;  
-  font-size: 0.9375rem;
+  font-size: 1rem;
   font-weight: 700;
   padding-top: 2rem;
   padding-inline: 1rem;
   color: #fff;
   text-transform: uppercase;
   background-color: ${COLORS.background};
-  width: 100%;
 
   @media screen and (min-width: 768px) {
     position: absolute; 
