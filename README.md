@@ -14,13 +14,17 @@ The Planets Fact Site
 
 ## Descripción 📑
 
-Lorem ipsum dolor, sit amet consectetur adipisicing elit. A voluptatum et esse, ipsum ipsam debitis ducimus dolorum placeat? Consectetur, soluta vero. Accusamus iure est pariatur, doloremque nam cumque natus unde adipisci laborum ut. At id sapiente consequatur earum. Magnam doloribus, voluptate zumito doloremque obcaecati vel excepturi numquam cupiditate ipsam quisquam!
+En esta práctica, programé con React Router un sitio sobre el sistema solar y sus planetas.
+
+Cada uno de los 9 planetas cuenta con su propia página, en la que es posible alternar entre tres pestañas: "Overview", "Internal Structure", and "Surface Geology".
 
 ## ¿Qué he aprendido en este proyecto? 🙇🏻
 
 Uno de los principales objetivos de este proyecto era aprender a manejar la navegación entre rutas. En el camino, no solo entendí mejor cómo funcionan, sino que también descubrí formas de crear objetos más claros y estructurados, lo que me ayudó a organizar y comprender mejor mi propio código.
 
-Un ejemplo de esto, es la nueva estructura que la constante de "tabs" y "planets-info" tienen. Trabjando con su index para no tener que realizar tres renderizado condicional, si no 2.
+Un ejemplo de esto es la nueva estructura de las constantes tabs y planetsInfo, que aprovechan su índice para evitar tres renderizados condicionales y reducirlo a solo dos.
+
+Otro de los retos que enfrenté fue el manejo del tamaño de las imágenes en diseño responsive. No quería complicar el objeto con tres versiones distintas por tamaño, así que investigué cómo adaptar su escala directamente desde CSS, logrando un resultado más limpio y flexible.
 
 ## Tecnologías 🛠
 

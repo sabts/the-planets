@@ -21,7 +21,7 @@ const MERCURY = {
     revolutionTime: "87.97 days",
     radius: "2,439.7 km",
     averageTemp: "430°c",
-    size: "111px",
+    size: 111,
     color: COLORS.mercury,
     wikiUrl: "https://es.wikipedia.org/wiki/Mercurio_(planeta)",
 }
@@ -45,7 +45,7 @@ const VENUS = {
   revolutionTime: "224.7 days",
   radius: "6,051.8 km",
   averageTemp: "471°c",
-  size: "154px",
+  size: 154,
   color: COLORS.venus,
   wikiUrl: "https://es.wikipedia.org/wiki/Venus_(planeta)"
 };
@@ -70,7 +70,7 @@ const EARTH = {
   revolutionTime: "365.26 days",
   radius: "6,371 km",
   averageTemp: "16°c",
-  size: "173px",
+  size: 173,
   color: COLORS.earth,
   wikiUrl: "https://es.wikipedia.org/wiki/Tierra"
 };
@@ -94,7 +94,7 @@ const MARS = {
   revolutionTime: "1.88 years",
   radius: "3,389.5 km",
   averageTemp: "−28°c",
-  size: "129px",
+  size: 129,
   color: COLORS.mars,
   wikiUrl: "https://es.wikipedia.org/wiki/Marte_(planeta)"
 };
@@ -118,7 +118,7 @@ const JUPITER = {
   revolutionTime: "11.86 years",
   radius: "69,911 km",
   averageTemp: "-108°c",
-  size: "224px",
+  size: 224,
   color: COLORS.jupiter,
   wikiUrl: "https://es.wikipedia.org/wiki/J%C3%BApiter_(planeta)"
 };
@@ -142,7 +142,7 @@ const SATURN = {
   revolutionTime: "29.46 years",
   radius: "58,232 km",
   averageTemp: "-138°c",
-  size: "256px",
+  size: 256,
   color: COLORS.saturn,
   wikiUrl: "https://es.wikipedia.org/wiki/Saturno_(planeta)"
 };
@@ -166,7 +166,7 @@ const URANUS = {
   revolutionTime: "84 years",
   radius: "25,362 km",
   averageTemp: "-195°c",
-  size: "176px",
+  size: 176,
   color: COLORS.uranus,
   wikiUrl: "https://es.wikipedia.org/wiki/Urano_(planeta)"
 };
@@ -190,7 +190,7 @@ const NEPTUNE = {
   revolutionTime: "164.79 years",
   radius: "24,622 km",
   averageTemp: "-195°c",
-  size: "-201°c", // Nota: esto parece un error, probablemente debería ser un valor como "201px"
+  size: 201,
   color: COLORS.neptune,
   wikiUrl: "https://es.wikipedia.org/wiki/Neptuno_(planeta)"
 };

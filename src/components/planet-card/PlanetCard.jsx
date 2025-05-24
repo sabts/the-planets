@@ -4,6 +4,7 @@ import {
   StyledExtraInfobox,
   StyledExtraInfoCaption,
   StyledExtraInfoContent,
+  StyledExtraInfoDiv,
   StyledInfoText,
   StyledLinkSource,
   StyledPhotoMainContainer,
@@ -13,6 +14,7 @@ import {
   StyledPlanetPhoto,
   StyledSource,
   StyledSourceContainer,
+  StyledTabPosition,
 } from "./styles-planet-card";
 import Tabs from "../tabs/tabs";
 import { TABS_INFO } from "../../constants/tabs";
@@ -21,15 +23,17 @@ const PlanetCard = ({ planetName }) => {
   const [activeTab, setActiveTab] = useState(TABS_INFO.OVERVIEW);
   const planetInfo = PLANETS_INFO[planetName]
   return (
-    <>
+    <StyledPlanetContainer>
+      <StyledTabPosition>
    <Tabs
   activeTab={activeTab}
   setActiveTab={setActiveTab}
   planetColor={planetInfo.color}
 />
+</StyledTabPosition>
 
 {activeTab !== TABS_INFO.SURFACE && (
-  <StyledPlanetContainer>
+  <>
     <StyledPhotoMainContainer>
       <StyledPlanetPhoto
         src={planetInfo.images[activeTab]}
@@ -40,15 +44,22 @@ const PlanetCard = ({ planetName }) => {
     <StyledPlanetInfoContainer>
       <StyledPlanetNameTitle>{planetInfo.name}</StyledPlanetNameTitle>
       <StyledInfoText>{planetInfo.texts[activeTab]}</StyledInfoText>
+      <StyledSourceContainer>
+        <StyledSource>Source:</StyledSource>
+        <StyledLinkSource href={planetInfo.wikiUrl}>
+          Wikipedia
+        </StyledLinkSource>
+        <img src="/assets/icon-source.svg" alt="" />
+      </StyledSourceContainer>
     </StyledPlanetInfoContainer>
-  </StyledPlanetContainer>
+  </>
 )}
 
 {activeTab === TABS_INFO.SURFACE && (
-  <StyledPlanetContainer>
+  <>
     <StyledPhotoMainContainer $planetLocation={planetInfo.images[2].geology}>
       <StyledPlanetPhoto
-        src={planetInfo.images[2].planet} 
+        src={planetInfo.images[2].planet}
         $planetSize={planetInfo.size}
         alt=""
       />
@@ -56,36 +67,35 @@ const PlanetCard = ({ planetName }) => {
     <StyledPlanetInfoContainer>
       <StyledPlanetNameTitle>{planetInfo.name}</StyledPlanetNameTitle>
       <StyledInfoText>{planetInfo.texts[2]}</StyledInfoText>
-    </StyledPlanetInfoContainer>
-  </StyledPlanetContainer>
-)}
-     
       <StyledSourceContainer>
         <StyledSource>Source:</StyledSource>
         <StyledLinkSource href={planetInfo.wikiUrl}>
           Wikipedia
         </StyledLinkSource>
+        <img src="/assets/icon-source.svg" alt="" />
       </StyledSourceContainer>
-
-      <StyledPlanetContainer>
-        <StyledExtraInfobox>
-          <StyledExtraInfoCaption>ROTATION TIME</StyledExtraInfoCaption>
-          <StyledExtraInfoContent>{planetInfo.rotationTime}</StyledExtraInfoContent>
-        </StyledExtraInfobox>
-        <StyledExtraInfobox>
-          <StyledExtraInfoCaption>REVOLUTION TIME</StyledExtraInfoCaption>
-          <StyledExtraInfoContent>{planetInfo.revolutionTime}</StyledExtraInfoContent>
-        </StyledExtraInfobox>
-        <StyledExtraInfobox>
-          <StyledExtraInfoCaption>RADIUS</StyledExtraInfoCaption>
-          <StyledExtraInfoContent>{planetInfo.radius}</StyledExtraInfoContent>
-        </StyledExtraInfobox>
-        <StyledExtraInfobox>
-          <StyledExtraInfoCaption>AVERAGE TEMP.</StyledExtraInfoCaption>
-          <StyledExtraInfoContent>{planetInfo.averageTemp}</StyledExtraInfoContent>
-        </StyledExtraInfobox>
-      </StyledPlanetContainer>
-    </>
+    </StyledPlanetInfoContainer>
+  </>
+)}
+      <StyledExtraInfoDiv>
+    <StyledExtraInfobox>
+      <StyledExtraInfoCaption>ROTATION TIME</StyledExtraInfoCaption>
+      <StyledExtraInfoContent>{planetInfo.rotationTime}</StyledExtraInfoContent>
+    </StyledExtraInfobox>
+    <StyledExtraInfobox>
+      <StyledExtraInfoCaption>REVOLUTION TIME</StyledExtraInfoCaption>
+      <StyledExtraInfoContent>{planetInfo.revolutionTime}</StyledExtraInfoContent>
+    </StyledExtraInfobox>
+    <StyledExtraInfobox>
+      <StyledExtraInfoCaption>RADIUS</StyledExtraInfoCaption>
+      <StyledExtraInfoContent>{planetInfo.radius}</StyledExtraInfoContent>
+    </StyledExtraInfobox>
+    <StyledExtraInfobox>
+      <StyledExtraInfoCaption>AVERAGE TEMP.</StyledExtraInfoCaption>
+      <StyledExtraInfoContent>{planetInfo.averageTemp}</StyledExtraInfoContent>
+    </StyledExtraInfobox>
+  </StyledExtraInfoDiv>
+</StyledPlanetContainer>
   );
 };
 
