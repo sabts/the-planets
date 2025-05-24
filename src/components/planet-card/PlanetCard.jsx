@@ -10,50 +10,29 @@ import {
   StyledPlanetInfoContainer,
   StyledPlanetNameTitle,
   StyledPlanetPhoto,
-  StyledSectionButton,
-  StyledSectionContainer,
   StyledSource,
   StyledSourceContainer,
 } from "./styles-planet-card";
+import Tabs from "../tabs/tabs";
 
 const PlanetCard = ({ planet }) => {
-  const [activeSection, setActiveSection] = useState("overview");
+  const [activeTab, setActiveTab] = useState(0);
   const planetSelected = findPlanet(planet);
   return (
     <>
-      <StyledSectionContainer>
-        <StyledSectionButton
-          onClick={() => setActiveSection("overview")}
-          $isActive={activeSection === "overview"}
-          $planetColor={planetSelected.color}
-        >
-          OVERVIEW
-        </StyledSectionButton>
+    <Tabs
+    activeTab={activeTab}
+    setActiveTab={setActiveTab}
+    planetColor={planetSelected.color}
+    />
 
-        <StyledSectionButton
-          onClick={() => setActiveSection("internalStructure")}
-          $isActive={activeSection === "internalStructure"}
-          $planetColor={planetSelected.color}
-        >
-          STRUCTURE
-        </StyledSectionButton>
-
-        <StyledSectionButton
-          onClick={() => setActiveSection("surfaceGeology")}
-          $isActive={activeSection === "surfaceGeology"}
-          $planetColor={planetSelected.color}
-        >
-          SURFACE
-        </StyledSectionButton>
-      </StyledSectionContainer>
-
-      {activeSection === "overview" && (
+      {activeTab !== 2 && (
         <StyledPlanetContainer>
           <StyledPhotoMainContainer>
           <StyledPlanetPhoto
-            src={planetSelected.overview.image}
+            src={planetSelected.image[activeTab]}
             $planetSize={planetSelected.size}
-            alt={`${planetSelected.displayName} overview`}
+            alt=""
           />
           </StyledPhotoMainContainer>
           <StyledPlanetInfoContainer>

@@ -14,28 +14,38 @@ const StyledHeader = styled.div`
   background-color: ${COLORS.background};
 `;
 
-const StyledMenu = styled.div`
-  position: absolute;
+const StyledMenu = styled.ul`
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 50px;  
   font-size: 0.9375rem;
   font-weight: 700;
-  padding-inline: 16px;
+  padding-top: 2rem;
+  padding-inline: 1rem;
   color: #fff;
   text-transform: uppercase;
   background-color: ${COLORS.background};
   width: 100%;
-  height: 100%;
-  z-index: 10;
-   padding-top: 3rem;
+
+  @media screen and (min-width: 768px) {
+    position: absolute; 
+    top: -5px;
+    left: 40%;
+    flex-direction: row;
+    gap: 24px;
+    width: auto;
+  }
 `;
 
 const StyledhamburgerMenu = styled.img`
   opacity: ${({ $isOpen }) => ($isOpen ? 0.5 : 1)};
+
+  @media screen and (min-width: 768px) {
+   display: none;
+  }
 `;
 
-const StyledPlanetItem = styled.div`
+const StyledPlanetItem = styled.li`
   display: flex;
   align-items: center;
   gap: 10px;
@@ -46,6 +56,10 @@ const StyledPlanetCircle = styled.div`
   height: 12px;
   border-radius: 50%;
   background-color: ${props => props.$color};
+
+  @media screen and (min-width: 768px) {
+   display: none;
+  }
 `;
 export {
   StyledHeader,

@@ -1,5 +1,5 @@
 import Menu from "../../components/menu/Menu";
-import {MENU_CONTENT} from "../../constants/menu_content"
+import {MENU_CONTENT} from "../../constants//menu-content"
 import { StyledAllPlanetsImg, StyledMainContainer } from "./styles-home";
 
 const Home = () => {
