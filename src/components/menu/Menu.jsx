@@ -30,7 +30,7 @@ const Menu = () => {
       ) : (
         <StyledMenu>
           {MENU_CONTENT.map((menu) => (
-            <StyledPlanetItem key={menu.id}>
+            <StyledPlanetItem key={menu.id} $color={menu.color}>
               <StyledPlanetCircle $color={menu.color} />
               <Link to={menu.link} onClick={() => setShowMenu(false)}>
                 {menu.name}

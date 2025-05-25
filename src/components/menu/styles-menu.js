@@ -62,10 +62,33 @@ const StyledhamburgerMenu = styled.img`
   opacity: ${({ $isOpen }) => ($isOpen ? 0.5 : 1)};
 `;
 
+
 const StyledPlanetItem = styled.li`
+ position: relative;
   display: flex;
   align-items: center;
   gap: 10px;
+
+  @media screen and (min-width: 1024px) {
+    display: flex;
+    justify-content: center;
+    width: 70px;
+    text-align: center;
+    &::before{
+    content: "";
+    position: absolute;
+    top: -300%;
+    left: 0;
+    height: 5px;
+    width: 100%;
+    background-color: transparent;
+    transition: width 0.3s ease-in-out;
+  }
+
+  &:hover::before {
+    background-color: ${({ $color }) => $color};
+  }
+  }
 `;
 
 const StyledPlanetCircle = styled.div`

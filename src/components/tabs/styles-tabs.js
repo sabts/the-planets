@@ -38,10 +38,18 @@ const StyledSectionButton = styled.li`
     padding: 11px 28px;
     align-items: center;
     gap: 28px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: ${({ $isActive }) =>
+      $isActive ? "none" : "1px solid rgba(255, 255, 255, 0.2)"};
     color: #fff;
-    background-color:${({ $isActive, $planetColor }) =>
-      $isActive ? $planetColor : "transparent"};;
+    background-color: ${({ $isActive, $planetColor }) =>
+      $isActive ? $planetColor : "transparent"};
+  }
+
+  @media screen and (min-width: 1024px) {
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      border: none;
+    }
   }
 `;
 
