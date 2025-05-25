@@ -2,6 +2,12 @@ import styled from "styled-components";
 import { COLORS } from "../../styles/colors";
 import { Link } from "react-router-dom";
 
+const StyledMainContainer = styled.main`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
 const StyledPlanetContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -11,13 +17,14 @@ const StyledPlanetContainer = styled.div`
 
   @media screen and (min-width: 768px) {
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto;
-    gap: 2rem;
+    gap: 1rem;
   }
 
-  @media screen and (min-width: 768px) {
-    grid-template-columns: repeat(2, 1fr);
+  @media screen and (min-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 5rem;
   }
 `;
 
@@ -26,18 +33,21 @@ const StyledTabPosition = styled.div`
     grid-column: 2 / 3;
     grid-row: 2 / 3;
     justify-self: center;
+    position: relative;
+    top: -10%;
   }
-    @media screen and (min-width: 1024px) {
-      grid-column: 2; 
+  @media screen and (min-width: 1024px) {
+    grid-column: 3;
     grid-row: 2;
-    justify-self: center;
-    align-self: center;
+    width: 350px;
+    height: 180px;
+    left: -12%;
   }
 `;
 
 const StyledPhotoMainContainer = styled.div`
- width: ${({ $planetSize }) => `${$planetSize}px`};
- height: ${({ $planetSize }) => `${$planetSize}px`};
+  width: ${({ $planetSize }) => `${$planetSize}px`};
+  height: ${({ $planetSize }) => `${$planetSize}px`};
   margin: 50px;
   position: relative;
 
@@ -58,17 +68,21 @@ const StyledPhotoMainContainer = styled.div`
   @media screen and (min-width: 768px) {
     grid-column: 1 / 3;
     grid-row: 1 / 2;
-    justify-self: center; 
+    justify-self: center;
     align-self: center;
   }
 
   @media screen and (min-width: 1024px) {
-    grid-column: 1 ;
-    grid-row: 1;
+    grid-column: 1 /3;
+    grid-row: 1 / 3;
     justify-self: center;
     align-self: center;
     width: ${({ $planetSize }) => `${$planetSize * 3}px`};
     height: ${({ $planetSize }) => `${$planetSize * 3}px`};
+  }
+  &::after {
+    width: 170px;
+    height: 170px;
   }
 `;
 
@@ -79,8 +93,8 @@ const StyledPlanetPhoto = styled.img`
   object-fit: contain;
 
   @media screen and (min-width: 768px) {
-  width: ${({ $planetSize }) => `${$planetSize * 3}px`};
-  height: ${({ $planetSize }) => `${$planetSize * 3}px`};
+    width: ${({ $planetSize }) => `${$planetSize * 3}px`};
+    height: ${({ $planetSize }) => `${$planetSize * 3}px`};
   }
 `;
 
@@ -88,12 +102,12 @@ const StyledPlanetInfoContainer = styled.div`
   color: #fff;
   text-align: center;
   @media screen and (min-width: 768px) {
-    grid-column: 1 / 1;
-    grid-row: 2 / 3;
+    grid-column: 1;
+    grid-row: 2 /3;
     text-align: left;
   }
   @media screen and (min-width: 1024px) {
-    grid-column: 2 ;
+    grid-column: 3;
     grid-row: 1;
     justify-self: center;
     align-self: center;
@@ -106,6 +120,10 @@ const StyledPlanetNameTitle = styled.h2`
   font-size: 2.5rem;
   font-weight: 400;
   text-transform: uppercase;
+
+  @media screen and (min-width: 1024px) {
+    font-size: 5rem;
+  }
 `;
 
 const StyledInfoText = styled.p`
@@ -113,6 +131,9 @@ const StyledInfoText = styled.p`
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.375rem;
+  @media screen and (min-width: 1024px) {
+    font-size: 1rem;
+  }
 `;
 
 const StyledSourceContainer = styled.div`
@@ -134,6 +155,10 @@ const StyledSource = styled.span`
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.5625rem;
+
+  @media screen and (min-width: 1024px) {
+    font-size: 1rem;
+  }
 `;
 
 const StyledLinkSource = styled(Link)`
@@ -146,7 +171,7 @@ const StyledLinkSource = styled(Link)`
 `;
 
 const StyledExtraInfoDiv = styled.div`
-margin-bottom: 2rem;
+  margin-bottom: 2rem;
   @media screen and (min-width: 768px) {
     display: flex;
     gap: 1rem;
@@ -173,6 +198,13 @@ const StyledExtraInfobox = styled.div`
     flex-direction: column;
     width: 164px;
     height: 88px;
+    align-items: flex-start;
+  }
+  @media screen and (min-width: 1024px) {
+    flex-direction: column;
+    justify-content: center;
+    width: 255px;
+    height: 128px;
   }
 `;
 
@@ -191,16 +223,22 @@ const StyledExtraInfoCaption = styled.span`
   }
 `;
 
-
 const StyledExtraInfoContent = styled.span`
   font-family: "Antonio", sans-serif;
   font-size: 1.25rem;
+  line-height: normal;
   @media screen and (min-width: 768px) {
     text-align: left;
+  }
+  @media screen and (min-width: 1024px) {
+    font-size: 2.5rem;
+    letter-spacing: -1.5px;
+    text-transform: uppercase;
   }
 `;
 
 export {
+  StyledMainContainer,
   StyledPlanetContainer,
   StyledPhotoMainContainer,
   StyledPlanetPhoto,

@@ -7,6 +7,7 @@ import {
   StyledExtraInfoDiv,
   StyledInfoText,
   StyledLinkSource,
+  StyledMainContainer,
   StyledPhotoMainContainer,
   StyledPlanetContainer,
   StyledPlanetInfoContainer,
@@ -24,7 +25,7 @@ const PlanetCard = ({ planetName }) => {
   const planetInfo = PLANETS_INFO[planetName]
 
   return (
-    <>
+    <StyledMainContainer>
     <StyledPlanetContainer>
       <StyledTabPosition>
    <Tabs
@@ -98,7 +99,7 @@ const PlanetCard = ({ planetName }) => {
       <StyledExtraInfoContent>{planetInfo.averageTemp}</StyledExtraInfoContent>
     </StyledExtraInfobox>
   </StyledExtraInfoDiv>
-</>
+</StyledMainContainer>
   );
 };
 
