@@ -25,7 +25,11 @@ const StyledAllPlanetsImg = styled.img`
 
   @media screen and (min-width: 768px) {
     top: 35px;
-    width: 45%; 
+    width:50%; 
+  }
+  @media screen and (min-width: 1024px) {
+    top: 80px;
+    width: 30%; 
   }
 `;
 
