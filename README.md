@@ -8,7 +8,7 @@ The Planets Fact Site
 
 <ul>
     <li>
-        <a target="_blank" href="">Vista en vivo</a>
+        <a target="_blank" href="https://raw.githubusercontent.com/sabts/the-planets/refs/heads/main/design/portada-home.png">Vista en vivo</a>
     </li>
 </ul>
 
@@ -43,9 +43,8 @@ Uno de esos elementos fue el menú de navegación, que debía adaptarse a distin
 ## Capturas del proyecto
 
 <p>
-   <img src="" alt="Captura del proyecto">
-   <img src="" alt="Captura del proyecto">
-   <img src="" alt="Captura del proyecto">
+   <img src="https://raw.githubusercontent.com/sabts/the-planets/refs/heads/main/design/portada-home.png" alt="Captura del proyecto">
+   <img src="https://raw.githubusercontent.com/sabts/the-planets/refs/heads/main/design/planeta.png" alt="Captura del proyecto">
 </p>
 
 ## Autor ✒️
