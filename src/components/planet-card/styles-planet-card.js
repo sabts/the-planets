@@ -15,6 +15,10 @@ const StyledPlanetContainer = styled.div`
     grid-template-rows: auto;
     gap: 2rem;
   }
+
+  @media screen and (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 
 const StyledTabPosition = styled.div`
@@ -23,11 +27,17 @@ const StyledTabPosition = styled.div`
     grid-row: 2 / 3;
     justify-self: center;
   }
+    @media screen and (min-width: 1024px) {
+      grid-column: 2; 
+    grid-row: 2;
+    justify-self: center;
+    align-self: center;
+  }
 `;
 
 const StyledPhotoMainContainer = styled.div`
-  width: ${({ $planetSize }) => $planetSize}px ; 
-  height: ${({ $planetSize }) => $planetSize}px;
+ width: ${({ $planetSize }) => `${$planetSize}px`};
+ height: ${({ $planetSize }) => `${$planetSize}px`};
   margin: 50px;
   position: relative;
 
@@ -50,16 +60,28 @@ const StyledPhotoMainContainer = styled.div`
     grid-row: 1 / 2;
     justify-self: center; 
     align-self: center;
-    width: ${({ $planetSize }) => $planetSize}px ; 
-  height: ${({ $planetSize }) => $planetSize}px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    grid-column: 1 ;
+    grid-row: 1;
+    justify-self: center;
+    align-self: center;
+    width: ${({ $planetSize }) => `${$planetSize * 3}px`};
+    height: ${({ $planetSize }) => `${$planetSize * 3}px`};
   }
 `;
 
 const StyledPlanetPhoto = styled.img`
-  width: ${({ $planetSize }) => `${$planetSize * 2}px`}; 
-  height: ${({ $planetSize }) => `${$planetSize * 2}px`}; 
+  width: ${({ $planetSize }) => `${$planetSize}px`};
+  height: ${({ $planetSize }) => `${$planetSize}px`};
   display: block;
   object-fit: contain;
+
+  @media screen and (min-width: 768px) {
+  width: ${({ $planetSize }) => `${$planetSize * 3}px`};
+  height: ${({ $planetSize }) => `${$planetSize * 3}px`};
+  }
 `;
 
 const StyledPlanetInfoContainer = styled.div`
@@ -69,6 +91,12 @@ const StyledPlanetInfoContainer = styled.div`
     grid-column: 1 / 1;
     grid-row: 2 / 3;
     text-align: left;
+  }
+  @media screen and (min-width: 1024px) {
+    grid-column: 2 ;
+    grid-row: 1;
+    justify-self: center;
+    align-self: center;
   }
 `;
 
@@ -118,11 +146,10 @@ const StyledLinkSource = styled(Link)`
 `;
 
 const StyledExtraInfoDiv = styled.div`
+margin-bottom: 2rem;
   @media screen and (min-width: 768px) {
     display: flex;
     gap: 1rem;
-    grid-column: 1 / 3;
-    grid-row: 3 / 3;
   }
 `;
 

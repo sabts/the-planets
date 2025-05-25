@@ -26,6 +26,10 @@ Un ejemplo de esto es la nueva estructura de las constantes tabs y planetsInfo, 
 
 Otro de los retos que enfrenté fue el manejo del tamaño de las imágenes en diseño responsive. No quería complicar el objeto con tres versiones distintas por tamaño, así que investigué cómo adaptar su escala directamente desde CSS, logrando un resultado más limpio y flexible.
 
+Este reto incluyó muchos cambios dinámicos a nivel de estilos —como cambios de color, contenido que aparece o se oculta, entre otros—, lo que me permitió profundizar en la lógica del renderizado condicional.
+
+Uno de esos elementos fue el menú de navegación, que debía adaptarse a distintos tamaños de pantalla. Para lograrlo, utilicé la librería react-responsive, lo que me permitió crear una experiencia más fluida tanto en dispositivos móviles como en escritorio.
+
 ## Tecnologías 🛠
 
 <!-- Iconos sacados de: https://github.com/alexandresanlim/Badges4-README.md-Profile?tab=readme-ov-file#-languages- -->

@@ -22,7 +22,9 @@ import { TABS_INFO } from "../../constants/tabs";
 const PlanetCard = ({ planetName }) => {
   const [activeTab, setActiveTab] = useState(TABS_INFO.OVERVIEW);
   const planetInfo = PLANETS_INFO[planetName]
+
   return (
+    <>
     <StyledPlanetContainer>
       <StyledTabPosition>
    <Tabs
@@ -77,6 +79,7 @@ const PlanetCard = ({ planetName }) => {
     </StyledPlanetInfoContainer>
   </>
 )}
+</StyledPlanetContainer>
       <StyledExtraInfoDiv>
     <StyledExtraInfobox>
       <StyledExtraInfoCaption>ROTATION TIME</StyledExtraInfoCaption>
@@ -95,7 +98,7 @@ const PlanetCard = ({ planetName }) => {
       <StyledExtraInfoContent>{planetInfo.averageTemp}</StyledExtraInfoContent>
     </StyledExtraInfobox>
   </StyledExtraInfoDiv>
-</StyledPlanetContainer>
+</>
   );
 };
 

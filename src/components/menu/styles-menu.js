@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { COLORS } from "../../styles/colors";
 
 const StyledHeader = styled.div`
-font-family: 'Antonio', sans-serif;
+  font-family: 'Antonio', sans-serif;
   position: relative;
   display: flex;
   align-items: center;
@@ -13,6 +13,20 @@ font-family: 'Antonio', sans-serif;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   padding-inline: 16px;
   background-color: ${COLORS.background};
+
+  @media screen and (min-width: 768px) {
+    gap: 0;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  @media screen and (min-width: 1024px) {
+  gap: 0;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between; 
+  padding: 1rem 2rem; 
+  }
 `;
 
 const StyledMenu = styled.ul`
@@ -29,10 +43,16 @@ font-family: 'League Spartan', sans-serif;
   background-color: ${COLORS.background};
 
   @media screen and (min-width: 768px) {
-    position: absolute; 
-    top: -5px;
-    left: 40%;
+    justify-content: center;
     flex-direction: row;
+    gap: 24px;
+    width: auto;
+  }
+  @media screen and (min-width: 1024px) {
+    padding-top: 0;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     gap: 24px;
     width: auto;
   }
@@ -40,10 +60,6 @@ font-family: 'League Spartan', sans-serif;
 
 const StyledhamburgerMenu = styled.img`
   opacity: ${({ $isOpen }) => ($isOpen ? 0.5 : 1)};
-
-  @media screen and (min-width: 768px) {
-   display: none;
-  }
 `;
 
 const StyledPlanetItem = styled.li`
